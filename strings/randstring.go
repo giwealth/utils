@@ -1,4 +1,4 @@
-package utils
+package strings
 
 import (
 	"math/rand"
@@ -7,8 +7,8 @@ import (
 
 const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
-// RandStringWithCharset 获取指定字符集下指定长度的随机字符串
-func RandStringWithCharset(length int, charset string) string {
+// RandomWithCharset 获取指定字符集下指定长度的随机字符串
+func RandomWithCharset(length int, charset string) string {
 	seededRand := rand.New(rand.NewSource(time.Now().UnixNano()))
 
 	b := make([]byte, length)
@@ -18,7 +18,7 @@ func RandStringWithCharset(length int, charset string) string {
 	return string(b)
 }
 
-// RandString 获取指定长度的随机字符串
-func RandString(length int) string {
-    return RandStringWithCharset(length, charset)
+// Random 获取指定长度的随机字符串
+func Random(length int) string {
+    return RandomWithCharset(length, charset)
 }

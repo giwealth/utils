@@ -1,4 +1,4 @@
-package utils
+package zip
 
 import (
 	"archive/zip"
@@ -8,8 +8,8 @@ import (
 	"strings"
 )
 
-// CreateZip 创建压缩文件,source指定需压缩的文件或目录;target压缩后保存的路径
-func CreateZip(source, target string) error {
+// Compress 创建压缩文件,source指定需压缩的文件或目录;target压缩后保存的路径
+func Compress(source, target string) error {
 	zipfile, err := os.Create(target)
 	if err != nil {
 		return err
@@ -70,8 +70,8 @@ func CreateZip(source, target string) error {
 	return err
 }
 
-// Unzip 解压缩
-func Unzip(zipFile, target string) error {
+// Decompress 解压缩
+func Decompress(zipFile, target string) error {
 	reader, err := zip.OpenReader(zipFile)
 	if err != nil {
 		return err

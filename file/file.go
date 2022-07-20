@@ -1,4 +1,4 @@
-package utils
+package file
 
 import (
 	"log"
@@ -6,13 +6,8 @@ import (
 	"path/filepath"
 )
 
-// DirExists 检查目录是否存在
-func DirExists(dir string) bool {
-	return checkExist(dir)
-}
-
-// FileExists 检查文件是否存在
-func FileExists(filepath string) bool {
+// Exists 检查目录或文件是否存在
+func Exists(filepath string) bool {
 	return checkExist(filepath)
 }
 
