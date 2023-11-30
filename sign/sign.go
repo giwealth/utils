@@ -28,14 +28,17 @@ func Verify(timestamp, nonce, signature, secretKey string, expired int64) error 
 	if err != nil {
 		return err
 	}
+	if ts > now {
+		return errors.New("sign generation time is greater than validation time")
+	}
 
-	if ts > now || now - ts >= expired {
+	if now - ts >= expired {
 		return errors.New("sign expired")
 	}
 
 	// 校验签名
 	if Generate(timestamp, nonce, secretKey) != signature {
-		return errors.New("verify sign fail")
+		return errors.New("sign verify fail")
 	}
 
 	return nil
