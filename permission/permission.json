@@ -1,0 +1,12 @@
+[
+    {
+        "desc": "资源中心:云服务器:服务器列表",
+        "code": "get:/api/clouds/resources/ecs",
+        "type": "system"
+    },
+    {
+        "desc": "资源中心:云服务器:服务器详情",
+        "code": "get:/api/clouds/resources/ecs/detail",
+        "type": "system"
+    }
+]
